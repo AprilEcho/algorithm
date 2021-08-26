@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="parent.js"></script>
+<script>
+  function Cat(name) {
+    Animal.call(this);
+    this.name = name || 'Tom';
+  }
+
+  (function () {
+    // 创建一个没有实例方法的类
+    var Super = function () {}
+    Super.prototype = Animal.prototype;
+    Cat.prototype = new Super();
+  })()
+
+  Cat.prototype.constructor = Cat; // 需要修复下构造函数
+
+  // Test Code
+  var cat = new Cat();
+  console.log(cat.name);
+  console.log(cat.sleep());
+  console.log(cat instanceof Animal); // true
+  console.log(cat instanceof Cat); //true
+</script>
+</body>
+</html>

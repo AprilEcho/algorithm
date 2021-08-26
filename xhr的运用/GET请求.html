@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 创建xhr对象
+  let xhr = new XMLHttpRequest();
+  //调用open对象
+  xhr.open('GET', '');
+  //调用send函数
+  xhr.send();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      console.log(xhr.responseText);
+    }
+
+  }
+</script>
+</body>
+</html>

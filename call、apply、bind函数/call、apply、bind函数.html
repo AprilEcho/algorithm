@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var person = {
+				name: "axuebin",
+				age: 25
+			};
+			function say(job) {
+				console.log(this.name + ":" + this.age + " " + job);
+			}
+			say.call(person, "FE"); // axuebin:25 FE
+			say.apply(person, ["FE"]); // axuebin:25 FE
+			var sayPerson = say.bind(person, "FE");
+			sayPerson(); // axuebin:25 FE
+		</script>
+	</body>
+</html>

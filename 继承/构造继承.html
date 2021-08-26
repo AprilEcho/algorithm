@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="parent.js"></script>
+<script type="text/javascript">
+  function Cat(name) {
+    // 使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型）
+    Animal.call(this);
+    this.name = name || 'Tom'
+  }
+
+  // Test Code
+  var cat = new Cat();
+  console.log(cat.name);
+  console.log(cat.sleep());
+  console.log(cat instanceof Animal); // false
+  console.log(cat instanceof Cat); // true
+
+</script>
+</body>
+</html>

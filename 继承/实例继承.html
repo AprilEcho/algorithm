@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="parent.js"></script>
+<script type="text/javascript">
+  function Cat(name) {
+    // 为父类实例添加新特性，作为子类实例返回
+    var instance = new Animal();
+    instance.name = name || 'Tom';
+    return instance;
+  }
+
+  // Test Code
+  var cat = new Cat();
+  console.log(cat.name);
+  console.log(cat.sleep());
+  console.log(cat instanceof Animal); // true
+  console.log(cat instanceof Cat); // false
+</script>
+</body>
+</html>

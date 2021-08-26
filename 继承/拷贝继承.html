@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="parent.js"></script>
+<script>
+  function Cat(name) {
+    var animal = new Animal();
+    for (var p in animal) {
+      Cat.prototype[p] = animal[p]
+    }
+    this.name = name || 'Tom'
+  }
+
+  // Test Code
+  var cat = new Cat();
+  console.log(cat.name);
+  console.log(cat.sleep());
+  console.log(cat instanceof Animal); // false
+  console.log(cat instanceof Cat); // true
+</script>
+</body>
+</html>
