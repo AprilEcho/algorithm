@@ -41,3 +41,9 @@ var isValid = function (s) {
   }
   return !stk.length
 }
+
+
+// Test
+s = "()"
+
+console.log(isValid(s));
