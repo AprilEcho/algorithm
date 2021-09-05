@@ -7,18 +7,17 @@ function resolveData(data) {
   return arr.join('&')
 }
 
-
 function itheima(option) {
   var xhr = new XMLHttpRequest();
 
   var qs = resolveData(option.data);
 
-  if (option.method.toUpperCase()==='GET'){
-    xhr.open(option.method,option.url+'?'+qs)
+  if (option.method.toUpperCase() === 'GET') {
+    xhr.open(option.method, option.url + '?' + qs)
     xhr.send()
-  }else if (option.method.toUpperCase()==='POST'){
-    xhr.open(option.method,option.url)
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+  } else if (option.method.toUpperCase() === 'POST') {
+    xhr.open(option.method, option.url)
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     xhr.send(qs)
   }
 
