@@ -14,4 +14,3 @@ function printListFromTailToHead(head) {
   }
   return stk.reverse()
 }
-
