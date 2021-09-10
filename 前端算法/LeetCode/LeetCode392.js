@@ -7,13 +7,13 @@
 //
 // 如果有大量输入的 S，称作 S1, S2, ... , Sk 其中 k >= 10亿，你需要依次检查它们是否为 T 的子序列。在这种情况下，你会怎样改变代码？
 //
-var isSubsequence = function (s,t) {
-  let start = 0 ;
-  for(let i of s){
-    start = t.indexOf(i,start);
-    if(start!=-1){
+var isSubsequence = function (s, t) {
+  let start = 0;
+  for (let i of s) {
+    start = t.indexOf(i, start);
+    if (start != -1) {
       start++
-    }else{
+    } else {
       return false;
     }
   }
